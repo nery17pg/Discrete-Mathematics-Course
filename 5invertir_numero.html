@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invertir un número positivo</title>
+</head>
+<body>
+    <script>
+        /*Escribe una función recursiva que invierta un número entero positivo. Si el número tiene ceros al inicio
+        o al final, estos no deben aparecer en el número invertido. La función debe validar que
+        el número de entrada es positivo.*/
+        function invertirNumero(n){
+            if (n < 10){  //Caso base
+                return n
+            };
+
+            if (n < 0){  //Caso base
+                return console.log("El valor debe ser positivo");
+            }
+            else{
+                let cadena = n.toString();
+                let ld = cadena[cadena.length - 1];
+                return parseInt(ld + invertirNumero(parseInt(cadena.slice(0, -1))), 10);  //Llamada recursiva
+            }
+        }
+
+        console.log(invertirNumero(500));
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menor a mayor en un arreglo</title>
+</head>
+<body>
+    <script>
+        /*Escribe una función recursiva que ordene de menor a mayor un arreglo de enteros basándose
+        en la siguiente idea: coloque el elemento más pequeño en la primera ubicación y luego ordene
+        el resto del arreglo con una llamada recursiva. El arreglo puede contener elementos repetidos
+        y no debe estar vacío.*/
+        function ordenar_MenToMay(array, primera = 0) {
+            if (primera >= array.length - 1) return; // Caso base
+
+            // Aquí busca el menor y lo pone en la posición 0
+            let menor = primera;
+            for (let i = primera + 1; i < array.length; i++) {
+                if (array[i] < array[menor]) {
+                    menor = i;
+                }
+            }
+
+            //Switch
+            [array[primera], array[menor]] = [array[menor], array[primera]];
+
+            //Llamada recursiva
+            ordenar_MenToMay(array, primera + 1);
+        }
+
+        let array = [1, 2, 9, 9, 5, 6];
+        ordenar_MenToMay(array);
+        console.log(array); 
+    </script>
+</body>
+</html>

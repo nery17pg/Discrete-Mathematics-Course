@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vector</title>
+</head>
+<body>
+    <script>
+        function maximo(arr, n) {
+            if (n === 1) {
+                return arr[0];
+            }
+
+            let maximoVec = maximo(arr, n - 1);
+
+            if (arr[n - 1] > maximoVec) {
+                return arr[n - 1];
+            } else {
+                return maximoVec;
+            }
+        }
+
+        let vector = [3, 7, 2, 9, 5];
+        let n = vector.length;
+        console.log(maximo(vector, n)); 
+    </script>
+</body>
+</html>

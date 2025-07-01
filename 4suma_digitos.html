@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suma de los dígitos de un número</title>
+</head>
+<body>
+    <script>
+        /*Crea una función recursiva que sume los digitos de un número entero positivo. La función debe
+        validar que el número de entrada es positivo.*/
+        function sumaDigitos(n) 
+        {
+            if (n < 0) {  // Validar que el número sea positivo
+                return "Error: el número no es positivo";
+            }
+            if (n < 10) {  // Caso base: si el número es menor que 10, devolver ese número
+                return n;
+            }
+            return (n % 10) + sumaDigitos(Math.floor(n / 10));  // Llamada recursiva: sumar el último dígito y seguir con el resto del número
+        }
+        console.log(sumaDigitos(456)); // 1 + 2 + 3 = 6
+        console.log(sumaDigitos(5));   // 5
+        console.log(sumaDigitos(-456)); // Error: el número no es positivo
+    </script>
+</body>
+</html>

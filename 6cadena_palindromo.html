@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadena de un palindromo</title>
+</head>
+<body>
+    <script>
+        /*Haz un programa que emplee recursividad para determinar si una cadena de caracteres es un
+        palíndromo (es simétrica, es decir, si se lee igual de izquierda a derecha que de derecha a
+        izquierda).*/
+        function palindromo(cadena) {
+            if (cadena.length <= 1){
+                return true
+            }
+            if (cadena[0] !== cadena[cadena.length - 1]){
+                return false
+            }
+
+            return palindromo(cadena.substring(1, cadena.length - 1))
+        }
+
+            console.log(palindromo('hola'))  //Output: False
+            console.log(palindromo('radar'))  //Output: True
+    </script>
+</body>
+</html>

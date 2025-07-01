@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suma elementos de vector</title>
+</head>
+<body>
+    <script>
+        /*Crea un programa de recursividad para calcular la suma de los elementos de un vector de número enteros desde su
+        función inicial a la final.*/
+        function sumaElementos(vector, inicio = 0) {
+            // Si se llega al final del vector, se regresa 0
+            if (inicio === vector.length) {
+                return 0;
+            }
+
+            // Aquí se suma el elemento actual y llamamos a los demás
+            return vector[inicio] + sumaElementos(vector, inicio + 1);
+        }
+
+        let vector = [10, 2, 30, 4, 5];
+        let suma = sumaElementos(vector);
+        console.log(suma); // Salida: 15
+    </script>
+</body>
+</html>

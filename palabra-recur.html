@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recursividad</title>
+</head>
+<body>
+    <script>
+        function alReves(str) {
+            if (str.length <= 1) {
+                return str;
+            }
+            return alReves(str.slice(1)) + str[0];
+        }
+
+        let palabra = "hola";
+        console.log(alReves(palabra)); 
+    </script>
+</body>
+</html>

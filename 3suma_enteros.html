@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suma de enteros hasta N</title>
+</head>
+<body>
+    <script>
+        /*Escribe un programa recursivo que encuentre la suma de los enteros positivios pares desde 2
+        hasta N. Si N es impar o no es positivo, la función debe devolver un mensaje de error apropiado.*/
+        function sumaEnteros(n){
+            if (n <= 0 || n % 2 != 0){  //Caso base
+                return console.log("El número tiene que ser positivo.");
+            } 
+            if (n == 2){  //Caso base
+                return n;
+            }
+            else{
+                return n + sumaEnteros(n-2);  // Llamada recursiva: suma de los enteros hasta N
+            }
+        }
+
+        console.log(sumaEnteros(6));
+    </script>
+</body>
+</html>
